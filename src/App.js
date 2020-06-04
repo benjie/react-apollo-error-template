@@ -1,5 +1,6 @@
 import React from "react";
-import { gql, useQuery } from "@apollo/client";
+import gql from "graphql-tag";
+import { useQuery } from "@apollo/react-hooks";
 
 const ALL_PEOPLE = gql`
   query AllPeople {
@@ -14,7 +15,7 @@ export default function App() {
   const {
     loading,
     data
-  } = useQuery(ALL_PEOPLE);
+  } = useQuery(ALL_PEOPLE, { ssr: false });
 
   return (
     <main>

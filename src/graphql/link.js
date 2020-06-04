@@ -1,5 +1,6 @@
 import { graphql, print } from "graphql";
-import { ApolloLink, Observable } from "@apollo/client";
+import { ApolloLink } from "apollo-link";
+import { Observable } from "rxjs";
 import { schema } from "./schema";
 
 function delay(ms) {
